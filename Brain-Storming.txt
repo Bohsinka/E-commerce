@@ -1,0 +1,32 @@
+Mon beau site d'e-commerce :
+
+Objectifs:
+Le but de ce projet est de créer un site d'e-commerce fonctionnel et visuelement "acceptable".
+
+Sur le site on devra pouvoir :
+1.Créer/se connecter à un compte utilisateur
+il contiendra :
+-Les informations liés au compte : -Le nom de l'utilisateur
+				   -Mot de passe (avec possibilité de le changer)
+				   -L'adresse mail
+				   -Une adresse de livraison par défaut
+-Un historique des achats effectués par l'utilateur.
+-Les informations sur les livraisons en cours
+-Une liste d'envies
+-...
+
+2.Effectuer une recherche pour trouver rapidement un produit
+
+3.Afficher un article et ses informations
+-Si l'article est en stock
+-Le prix
+-Une descrption
+-Une image
+-Les avis
+-...
+
+4.Accéder au panier des achats en cours
+
+5.Bah c'est déjà bien si j'arrrive à faire ça hein !!
+
+	GOOD LUCK !
