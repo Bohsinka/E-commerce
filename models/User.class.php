@@ -12,14 +12,6 @@ class User
 	private $password;
 	private $mail;
 
-	public function __construct( $id, $login, $password, $mail ){
-		$this-> id = $id;
-		$this-> login = $login;
-		$this-> password = $password;
-		$this-> mail = $mail;
-	}
-
-
 	public function getId(){
 		return $this->id;
 	}

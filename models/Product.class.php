@@ -13,14 +13,6 @@ class Product{
 	private $stock;
 	private $description;
 
-	public function __construct( $id, $name, $type, $price, $stock, $descritpion ){
-		$this-> id = $id;
-		$this-> name = $name;
-		$this-> type = $type;
-		$this-> stock = $stock;
-		$this-> descritpion = $description;
-	}
-
 	public function getId(){
 		return $this->id;
 	}
@@ -38,5 +30,18 @@ class Product{
 	}
 	public function getDescription(){
 		return $this->descritpion;
+	}
+
+	public function setName(){
+		$this->name = $name;
+	}
+	public function setType(){
+		$this->name = $type
+	}
+	public function setPrice(){
+		$this->name = $price;
+	}
+	public function setDescrition(){
+		$this->name = $descrition;
 	}
 }
