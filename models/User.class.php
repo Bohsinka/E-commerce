@@ -2,7 +2,7 @@
 /**
  *
  * Class User
- * Gestion des Utilisateurs
+ * Gert les Utilisateurs
  *
  */
 class User{

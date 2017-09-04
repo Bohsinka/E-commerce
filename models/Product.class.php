@@ -2,7 +2,7 @@
 /**
  *
  * Class Product
- * Gestion des produits
+ * Gert les produits
  *
  */
 class Product{

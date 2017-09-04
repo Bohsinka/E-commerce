@@ -2,7 +2,7 @@
 /**
  *
  * Class Field
- * Permet de générer les champs de notre formulaire
+ * Permet de gérer les champs de notre formulaire
  *
  */
 class Field extends Form{
