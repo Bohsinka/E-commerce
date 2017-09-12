@@ -10,7 +10,10 @@ if( isset($_POST['action']) ){
 					$manager = new UserManager($db);
 					$test = $manager->findByLogin($_POST['login']);
 					if($test === false)
+					{
 						$user = $manager->create($_POST['login'], $_POST['password'], $_POST['mail']);
+						$_SESSION['login'] = $user->getLogin();
+					}
 					else
 						return $error = 1;
 				}else
@@ -25,7 +28,10 @@ if( isset($_POST['action']) ){
 			$manager = new UserManager($db);
 			$user = $manager->findByLogin($_POST['login']);
 			if($user === true)
+			{
+				$_SESSION['login'] = $user->getLogin();
 				return $user;
+			}
 			else if(($user === false))
 				return $error = 1;
 		}

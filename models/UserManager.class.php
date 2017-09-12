@@ -11,15 +11,14 @@ class UserManager{
 		$sql = "SELECT * FROM users WHERE id=?";
 		$query = $this->db->prepare($sql);
 		$query->execute([$id]);
-		$user = $query->fetchObject('User');
+		$user = $query->fetchObject('User', [$this->db]);
 		return $user;
 	}
 	public function findByLogin($login){
 		$sql = "SELECT * FROM users WHERE login=?";
 		$query = $this->db->prepare($sql);
 		$query->execute([$login]);
-		$user = $query->fetchObject('User');
-		$_SESSION['login'] = $login;
+		$user = $query->fetchObject('User', [$this->db]);
 		return $user;
 	}
 
@@ -27,12 +26,12 @@ class UserManager{
 		$sql = "SELECT * FROM users";
 		$query = $this->db->prepare($sql);
 		$query->execute();
-		$users = $query->fetchAll(PDO::FETCH_CLASS, 'User');
+		$users = $query->fetchAll(PDO::FETCH_CLASS, 'User', [$this->db]);
 		return $users;
 	}
 
 	public function create($login, $password, $mail){
-		$user = new User();
+		$user = new User($this->db);
 		$user->setLogin($login);
 		$user->setPassword($password);
 		$user->setMail($mail);

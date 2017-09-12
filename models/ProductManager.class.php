@@ -7,6 +7,15 @@ class ProductManager{
 		$this->db = $db;
 	}
 
+	public function findByOrder(Order $order)
+	{
+		$sql = "SELECT products.* FROM products INNER JOIN carts ON carts.id_product=products.id WHERE carts.id_order=?";
+		$query = $this->db->prepare($sql);
+		$query->execute([$order->getId()]);
+		$products = $query->fetchAll(PDO::FETCH_CLASS, 'Product');
+		return $products;
+	}
+
 	public function findById($id){
 		$sql = "SELECT * FROM products WHERE id=?";
 		$query = $this->db->prepare($sql);

@@ -2,7 +2,10 @@
 	<h1><?= $product->getName(); ?></h1>
 	<img src="<?= $product->getPicture(); ?>">
 	<h2>Description :</h2>
-	<p class="content"><?= $product->getContent(); ?></p>
+	<p class="content"><?= utf8_decode($product->getContent()); ?></p>
 	<p class="price">Price : <?= $product->getPrice(); ?> €</p>
-	<button>Add to cart</button>
+	<form method="POST">
+		<input type="hidden" name="id_product" value="<?=$product->getId()?>">
+		<button type="submit" name="action" value="add">Add to cart</button>
+	</form>
 </article>

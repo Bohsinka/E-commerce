@@ -6,6 +6,22 @@ class User{
 	private $password;
 	private $mail;
 
+	private $db;
+
+	public function __construct($db)
+	{
+		$this->db = $db;
+	}
+
+	public function getPanier()
+	{
+		$manager = new OrderManager($this->db);
+		$panier = $manager->findCartByUser($this);
+		if (!$panier)
+			$panier = $manager->create($this);
+		return $panier;
+	}
+
 	public function getId(){
 		return $this->id;
 	}
