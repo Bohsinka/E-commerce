@@ -1,0 +1,34 @@
+<header>
+	<nav class="flex between">
+        <ul class="flex around">
+            <li>
+                <a href="index.php?page=home">Acceuil</a>
+            </li>
+            <li>
+                <a href="index.php?page=profile">Profile</a>
+            </li>
+            <?php if( isset($_SESSION['login']) ) : ?>
+                <?php if($_SESSION['login'] === 'admin' ) : ?>
+                    <li>
+                        <a href="index.php?page=create">Add product</a>
+                    </li>
+                <?php endif ?>
+            <?php endif ?>
+        </ul>
+        <div class="log flex around">
+            <?php if( isset($_SESSION['login']) ) : ?>
+                <p>Bienvenue <?= $_SESSION['login']; ?></p>
+                <form method="POST">
+                <button type="submit" name="action" value="logout">Logout</button>
+                </form>
+            <?php else : ?>
+                <form method="POST">
+                    <input name="login" type="text" placeholder="Username" >
+                    <input name="password" type="password" placeholder="Password">
+                    <button type="submit" name="action" value="login">Login</button>
+                </form>
+                <a href="index.php?page=register"><button>Register</button></a>
+            <?php endif ?>
+        </div>
+    </nav>
+</header>

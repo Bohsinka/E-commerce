@@ -1,0 +1,5 @@
+<article id="home" class="flex around">
+	<?php foreach ($products->findAll() as $product): ?>
+		<a href="index.php?page=single&id=<?=$product->getId()?>"><img src="<?= $product->getPicture(); ?>"></a>
+	<?php endforeach?>
+</article>

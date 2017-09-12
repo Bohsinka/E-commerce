@@ -1,0 +1,8 @@
+<article id="single">
+	<h1><?= $product->getName(); ?></h1>
+	<img src="<?= $product->getPicture(); ?>">
+	<h2>Description :</h2>
+	<p class="content"><?= $product->getContent(); ?></p>
+	<p class="price">Price : <?= $product->getPrice(); ?> €</p>
+	<button>Add to cart</button>
+</article>

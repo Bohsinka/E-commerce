@@ -1,0 +1,22 @@
+<div class="error">
+	<?php if(isset($error)):  ?>
+		<?php if($error === 1): ?>
+			<p>Invalid password<p>
+		<?php endif ?>
+		<?php if($error === 2): ?>
+			<p>Enter a password<p>
+		<?php endif ?>
+	<?php endif ?>
+</div>
+<h1>Profile :</h1>
+<p>Login : <?= $user->getLogin(); ?></p>
+<p>Password :<?= $user->getPassword(); ?> <button id="change">Change</button></p>
+<div id="hide">
+	<form method="POST">
+		<input type="password" name="passwordNew" placeholder="New password">
+		<input type="password" name="passwordVerif" placeholder="Confirm password">
+		<button name="action" value="change" >Submit</button>
+	</form>
+</div>
+<p>E-mail :<?= $user->getMail(); ?></p>
+
